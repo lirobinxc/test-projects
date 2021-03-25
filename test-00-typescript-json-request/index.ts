@@ -1,27 +1,34 @@
-import axios from 'axios';
+// Arrays
+let colors = ['red', 'green', 'blue', 5];
+let ages: number[] = [5, 3, 54, 12];
 
-const URL = 'https://jsonplaceholder.typicode.com/todos/1';
+// Classes
+class Car {}
+let car: Car = new Car();
 
-interface Todo {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+// Object literals
+let point: { x: number; y: number } = {
+  x: 10,
+  y: 20,
+};
+// Destructured objects
+let person = {
+  age: 10,
+  name: 'Bobby',
+  coords: {
+    lat: 112,
+    lon: 321,
+  },
+  setAge(age: number): void {
+    this.age = age;
+  },
+};
+const { age }: { age: number } = person; // must also destructure the type annotation
+const {
+  coords: { lat, lon },
+}: { coords: { lat: number; lon: number } } = person;
 
-axios.get(URL).then((res) => {
-  const todo = res.data as Todo;
-
-  const id = todo.id;
-  const title = todo.title;
-  const completed = todo.completed;
-
-  logTodo(id, title, completed);
-});
-
-const logTodo = (id: number, title: string, completed: boolean) => {
-  console.log(`
-    The Todo with ID: ${id}
-    Has a title of: ${title}
-    Is it completed? ${completed}
-  `);
+// Functions
+const logNum = (a: number, b: number): number => {
+  return a + b;
 };
