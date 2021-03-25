@@ -32,3 +32,31 @@ const {
 const logNum = (a: number, b: number): number => {
   return a + b;
 };
+
+// Interfaces
+interface Vehicle {
+  name: string;
+  year: Date;
+  isBroken: boolean;
+  summary(): string; // what the function returns
+}
+
+const oldCivic: Vehicle = {
+  name: 'Honda Civic',
+  year: new Date(),
+  isBroken: false,
+  summary() {
+    return `Name: ${this.name}`;
+  },
+};
+
+// Class field modifiers
+class Paint {
+  constructor(public color: string) {}
+}
+
+class CoolPaint extends Paint {
+  constructor(color, public isGlossy: boolean) {
+    super(color);
+  }
+}
