@@ -3,8 +3,10 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "es6",
+    "moduleResolution": "node",
     "target": "es5",
     "allowJs": false,
-    "sourceMap": true
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true
   }
 }

@@ -1,9 +1,9 @@
+// webpack.common.js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
   entry: path.resolve(__dirname, './src/index.ts'),
   module: {
     rules: [
@@ -18,7 +18,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'bundle.[hash].js', // <- ensure unique bundle name
+    filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
