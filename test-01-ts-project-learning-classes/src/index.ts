@@ -1,9 +1,18 @@
 import { Company } from './Company';
 import { User } from './User';
+import { CustomMap } from './CustomMap';
+
+// inject script to index.html
+const mapScript = document.createElement('script');
+mapScript.type = 'text/javascript';
+mapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.MAPS_API_KEY}`;
+mapScript.onload = () => initMap();
+document.head.appendChild(mapScript);
 
 const user = new User();
 const company = new Company();
-
 console.log(user);
-console.log(company);
-console.log('apikey', process.env.MAPS_API_KEY);
+
+function initMap(): void {
+  new CustomMap('map');
+}

@@ -2,9 +2,10 @@
   "name": "test-01-ts-project-learning-classes",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "webpack serve --config webpack.dev.js",
+    "start": "browser-sync start --server --files \"dist/*.html\" --ss \"dist\"",
+    "parcel": "parcel ./src/index.html",
     "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pregit": "git add .",
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/google.maps": "^3.44.2",
     "clean-webpack-plugin": "^3.0.0",
     "dotenv-webpack": "^7.0.2",
     "html-webpack-plugin": "^5.3.1",

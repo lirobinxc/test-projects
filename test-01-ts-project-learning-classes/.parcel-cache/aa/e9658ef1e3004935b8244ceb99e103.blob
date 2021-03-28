@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="789826dd7e8914063003f2970e92fcad">
+    <script data-parcel-key="de6557e6494b0e52555188c073a8a5fd">
+      function initMap() {
+        console.log('at maps');
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: { lat: -34.397, lng: 150.644 },
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <div id="map"></div>
+    <script src="da0ab3a9b104c325bf444f4df222b2d4"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+var _Company = require('./Company');
+var _User = require('./User');
+// inject script to index.html
+const head = document.head;
+const mapScript = document.createElement('script');
+mapScript.type = 'text/javascript';
+// script.async = false;
+mapScript.src = `https://maps.googleapis.com/maps/api/js?key=${"AIzaSyDyA0jzeEokkJbQ3WVH2kPyHDzFfclJ7x0"}`;
+mapScript.onload = () => initMap();
+head.appendChild(mapScript);
+const user = new _User.User();
+const company = new _Company.Company();
+console.log(user);
+let map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {
+      lat: 0,
+      lng: 0
+    },
+    zoom: 1
+  });
+}

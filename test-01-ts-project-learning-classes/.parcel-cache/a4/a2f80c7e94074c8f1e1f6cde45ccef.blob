@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="d1b40d1e7a0e45bf5f217f63a0d650c7"></script>
+    <link rel="stylesheet" type="text/css" href="789826dd7e8914063003f2970e92fcad">
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="121adfe2daa95f3b095b56be1d02f2d6"></script>
+  </body>
+</html>
