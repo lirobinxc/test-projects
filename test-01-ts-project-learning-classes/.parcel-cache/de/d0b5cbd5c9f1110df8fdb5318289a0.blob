@@ -1,9 +1,0 @@
-var _Company = require('./Company');
-var _User = require('./User');
-const user = new _User.User();
-const company = new _Company.Company();
-console.log(user);
-console.log(company);
-console.log('hello there');
-console.log('woah there');
-console.log('apikey', "AIzaSyDyA0jzeEokkJbQ3WVH2kPyHDzFfclJ7x0");
