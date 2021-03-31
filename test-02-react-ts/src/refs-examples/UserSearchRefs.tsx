@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const users = [
   {
@@ -16,11 +16,17 @@ const users = [
 ];
 
 const UserSearchRefs: React.FC = () => {
-  const inputRef = useRef();
+  // We annotate `inputRef` with null as well because when it is initiated, React has not rendered the DOM yet
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const [name, setName] = useState('');
   const [user, setUser] = useState<{ name: string; age: number } | undefined>(
     undefined
   );
+
+  useEffect(() => {
+    if (!inputRef.current) return;
+    inputRef.current.focus();
+  }, []);
 
   const onClick = () => {
     const foundUser = users.find(
@@ -33,6 +39,7 @@ const UserSearchRefs: React.FC = () => {
     <div>
       <h3>User Search</h3>
       <input
+        ref={inputRef}
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
