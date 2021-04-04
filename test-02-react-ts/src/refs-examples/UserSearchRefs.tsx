@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
+import { ThemeContext } from '../App';
 
 const users = [
   {
@@ -22,6 +23,10 @@ const UserSearchRefs: React.FC = () => {
   const [user, setUser] = useState<{ name: string; age: number } | undefined>(
     undefined
   );
+  const theme = useContext(ThemeContext);
+  console.log(theme);
+
+  // const isDark = useContext(IsDarkContext);
 
   useEffect(() => {
     if (!inputRef.current) return;
