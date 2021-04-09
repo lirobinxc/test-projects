@@ -1,12 +1,10 @@
-import React, { useState, useRef, useCallback } from 'react';
-import _ from 'lodash';
+import React, { useState, useRef } from 'react';
 
 let timer;
-
 const DebouncedCounter = () => {
   const [counter, setCounter] = useState(0);
-  const debounceLeading = useRef((func, wait = 5000) => {
-    // `let timer` must be placed outside the function in the global scope so React doesn't reinitiate it
+
+  const debounceLeading = (func, wait = 1000) => {
     return (...args) => {
       if (!timer) func(...args);
       clearTimeout(timer);
@@ -14,14 +12,13 @@ const DebouncedCounter = () => {
         timer = undefined;
       }, wait);
     };
-  }, []);
+  };
 
-  const debounce = (func, wait = 5000) => {
+  const debounce = (func, wait = 1000) => {
     let timer;
     return (...args) => {
       clearTimeout(timer);
-      setTimeout(() => {
-        console.log(`📣 args ~`, args);
+      timer = setTimeout(() => {
         func(...args);
       }, wait);
     };
@@ -31,7 +28,7 @@ const DebouncedCounter = () => {
     const sum = args.reduce((prev, cur) => prev + cur);
     setCounter(counter + sum);
   });
-  const handleClickLeading = debounceLeading.current(
+  const handleClickLeading = debounceLeading(
     (...args) => {
       const sum = args.reduce((prev, cur) => prev + cur);
       setCounter(counter + sum);
