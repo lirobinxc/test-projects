@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is an incredible website." />
+
+    <link rel="stylesheet" href="../normalize.css" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Live Server</title>
+  </head>
+  <body>
+    <h1>HTML Summary</h1>
+
+    <!-- Links -->
+    <h2><code>a</code></h2>
+    <a href="http://google.ca" target="_blank">Visit Google</a>
+
+    <!-- Images -->
+    <h2><code>img</code></h2>
+    <img src="https://source.unsplash.com/200x200/?house" alt="" />
+
+    <!-- Lists -->
+    <h2><code>ul, ol</code></h2>
+    <ul>
+      <li>Apple</li>
+      <li>Banana</li>
+      <ul>
+        <li>Orange 1</li>
+        <li>Orange 2</li>
+      </ul>
+    </ul>
+
+    <!-- Tables -->
+    <h2><code>table</code></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>jsmith@gmail.com</td>
+        </tr>
+      </thead>
+    </table>
+
+    <!-- Forms -->
+    <h2><code>form</code></h2>
+    <form action="process.php">
+      <div>
+        <!-- `for` attr refers to the input `id` -->
+        <label for="name">Name</label>
+        <!-- `name` attr is how server code gets the data of the input -->
+        <input type="text" id="name" name="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="abc@email.com" />
+      </div>
+      <div>
+        <label for="message">Message</label><br />
+        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+      </div>
+      <!-- Select -->
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <!-- Radio -->
+      <fieldset>
+        <legend>Select a membership</legend>
+
+        <!-- `for` refers to the input `id` -->
+        <!-- input `name` refers to the whole collection -->
+        <label for="basic">Basic</label>
+        <input
+          type="radio"
+          name="membership"
+          id="basic"
+          value="basic"
+          checked
+        />
+
+        <label for="premium">Premium</label>
+        <input type="radio" name="membership" id="premium" value="premium" />
+
+        <label for="corporate">Corporate</label>
+        <input
+          type="radio"
+          name="membership"
+          id="corporate"
+          value="corporate"
+        />
+      </fieldset>
+
+      <h2><code>input, button</code></h2>
+      <!-- Input submit -->
+      <input type="submit" />
+
+      <!-- Reset button -->
+      <button type="reset">Reset</button>
+    </form>
+
+    <h2>
+      <a href="entities.html">Entities</a>
+    </h2>
+  </body>
+</html>
