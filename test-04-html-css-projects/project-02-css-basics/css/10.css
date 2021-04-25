@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline; /* Turns `li` from block-element into `inline-element` */
+}
+
+li a {
+  color: brown;
+  text-decoration: none;
+  padding-right: 20px;
+}
+
+/* `margin: auto` only works on block-elements! */
+img {
+  display: block; /* By turning `img` into a block-element, we can now center it with `margin: auto` */
+  margin: auto;
+}
+
+.box {
+  width: 30%;
+  /* `display: inline` can't inline the boxes (div) because */
+  /* `width/height/margin` propeties don't work for inline-elements */
+  /* Instead, we use `display: inline-block` */
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid green;
+  padding: 20px;
+  margin-bottom: 10px;
+}
