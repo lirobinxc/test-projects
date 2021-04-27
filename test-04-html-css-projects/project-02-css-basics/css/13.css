@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: grey;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  display: none;
+}
+
+/* Mobile Small */
+@media (max-width: 399px) {
+  body {
+    background: grey;
+  }
+
+  #mobile-sm h1 {
+    display: block;
+  }
+}
+
+/* Mobile Large */
+@media (min-width: 400px) and (max-width: 767px) {
+  body {
+    background: red;
+  }
+
+  #mobile-lg h1 {
+    display: block;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background: green;
+  }
+
+  #tablet h1 {
+    display: block;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body {
+    background: blue;
+  }
+
+  #desktop h1 {
+    display: block;
+  }
+}
