@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Box from './Box';
 import { isThereAWinner } from '../utilities/gameLogic';
 import Banner from './Banner';
@@ -53,7 +52,7 @@ const GameWrapper = () => {
     } else if (turnCounter === 9 && winner === null) {
       setWinner('TIE');
     }
-  }, [gameState, currentPlayer]);
+  }, [gameState, currentPlayer, turnCounter, winner]);
 
   // useEffect(() => {}, [winner]);
 
