@@ -29,3 +29,5 @@ export const isThereAWinner = (gameState) => {
 
   return results.find((ele) => ele === true) !== undefined ? true : false;
 };
+
+export const isThereATie = (gameState) => {};

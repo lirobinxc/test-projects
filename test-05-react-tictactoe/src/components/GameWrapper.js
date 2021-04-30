@@ -43,25 +43,31 @@ const GameWrapper = () => {
   const [currentPlayer, setCurrentPlayer] = useState('X');
   const [winner, setWinner] = useState(null);
   const [isInputDisabled, setIsInputDisabled] = useState(false);
+  const [turnCounter, setTurnCounter] = useState(0);
 
   // Checks for a winner after each turn
   useEffect(() => {
     if (isThereAWinner(gameState)) {
       setWinner(currentPlayer === 'X' ? 'O' : 'X');
       setIsInputDisabled(true);
+    } else if (turnCounter === 9 && winner === null) {
+      setWinner('TIE');
     }
   }, [gameState, currentPlayer]);
 
   // useEffect(() => {}, [winner]);
 
   const handleClick = (e) => {
-    if (isInputDisabled) return;
+    if (isInputDisabled) return; // Checks to see if all input is disabled
+
     const id = e.target.id;
     const idArr = id.split('-');
     const targetRow = idArr[0];
     const targetColumn = idArr[1];
     console.log(`Clicked ${id}`);
-    if (gameState[targetRow][targetColumn]) return;
+
+    if (gameState[targetRow][targetColumn]) return; // Prevents input if box is already checked
+
     const newGameState = gameState.map((row, rowIndex) => {
       if (rowIndex === Number(targetRow)) {
         return row.map((col, colIndex) => {
@@ -72,6 +78,7 @@ const GameWrapper = () => {
       } else return row;
     });
     setGameState(newGameState);
+    setTurnCounter(turnCounter + 1);
     setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
   };
 
@@ -80,6 +87,7 @@ const GameWrapper = () => {
     setCurrentPlayer('X');
     setWinner(null);
     setIsInputDisabled(false);
+    setTurnCounter(0);
   };
 
   return (
